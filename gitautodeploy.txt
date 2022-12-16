@@ -1,0 +1,12 @@
+chạy thủ công:
+cd /var/www/Git-Auto-Deploy
+python -m gitautodeploy --daemon-mode --quiet --config config.json --allow-root-user
+log: cd /var/www/Git-Auto-Deploy/gitautodeploy.log
+cronjob tự khởi động khi cấu hình:
+@reboot /usr/bin/python -m /var/www/Git-Auto-Deploy/gitautodeploy --daemon-mode --quiet --config /var/www/git-auto-deploy.conf.json
+config:
+git remote set-url origin http://tungtt@10.100.140.19:7990/scm/crm/webapp.git
+webhook: 10.100.140.29:8990
+
+
+
